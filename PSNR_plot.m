@@ -5,6 +5,7 @@ function PSNR_plot(ref, imgs, R, grayscale, bit_depth)
 
 	PSNRplot = figure;
 	SSIM_map = figure;
+	MSEplot = figure;
 	clf(SSIM_map)
 	clf(PSNRplot)
 
@@ -63,4 +64,9 @@ function PSNR_plot(ref, imgs, R, grayscale, bit_depth)
 	ylabel('PSNR(dB)')
 	xlabel('Rate(bpp)')
 
+	figure(MSEplot)
+	plot(R,MSE_lst)
+	title('Rate Distortion Graph')
+	ylabel('MSE')
+	xlabel('Rate(bpp)')
 end
